@@ -88,9 +88,10 @@ void simulateRolls() {
   fout << "total tests: " << totalTests << '\n';
   for (int i = 0; i < items.size(); i++) {
     fout << "count: " << std::setw(3) << results[i] << " | "
-         << "ratio: " << std::setprecision(2) << std::fixed << 1.0 * results[i] / totalTests << " | "
-         << "probability: " << std::setprecision(2) << std::fixed <<  items[i].dropchance << " | "
-         << items[i].debugmenulabel << '\n';
+         << "ratio: " << std::setprecision(2) << std::fixed
+         << 1.0 * results[i] / totalTests << " | "
+         << "probability: " << std::setprecision(2) << std::fixed
+         << items[i].dropchance << " | " << items[i].debugmenulabel << '\n';
   }
   fout.flush();
   fout.close();
@@ -197,7 +198,7 @@ void Wheel::rollToWinner(int winnerIndex) {
   this->_wheel->runAction(action);
 }
 void Wheel::roll() {
-  //simulateRolls();
+  // simulateRolls();
   int winnerIndex = pickWinner();
   rollToWinner(winnerIndex);
 }
